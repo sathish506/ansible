@@ -10,4 +10,19 @@ all is a group which included all the entries in INVENTORY File.
 
 Ansible is all about MODULES ( Collections )
 
+ANSIBLE has lot of pre-defined variables and we need to use them to supply userName and password it has to use to authenticate to the nodes.
 
+ans
+### ansible_user     : Predefined variable for userName 
+### ansible_password : Predefined variable for password  
+
+Variables should be passed to ansible by using the flag -e
+
+    Ex: ansible -i INVENTORY all  -e ansible_user=userName -e ansible_password=password 
+    $ ansible -i inv all  -e ansible_user=centos -e ansible_password=xyz123 -m shell -a uptime
+Automated Approach : This uses Playbook
+Playbooks are written using a language called YAML.
+
+YAML is just  markup languaga ; Markup language is nothing a presentation language
+
+YAML is indendation specific.
