@@ -18,11 +18,13 @@
         msg: Value of the URL's is {{URL}}
       vars: 
         URL: task.google.com
-     
+# - name: Demo on using undelated variable 
+    #   ansible.builtin.debug:
+    #     msg: Value of CLIURL is {{CLIURL}}
 
-# - name: Printing prompt variable  
+    # - name: Printing prompt variable  
     #   ansible.builtin.debug:
     #     msg: Name of the person is {{URNAME}}
-  # PS : If you try to print a variable that is not declared, it will throw an error.
-# Variable Precedence : 
-### CLI Variables > Local Variable > Global Variable
+    - name: This is env specific
+      ansible.builtin.debug:
+        msg: Type Of Instance To Be Used {{INS_TYPE}}
