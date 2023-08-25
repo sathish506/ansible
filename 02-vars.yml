@@ -18,6 +18,7 @@
         msg: Value of the URL is {{URL}}
       vars: 
         URL: task.google.com
+
 # - name: Demo on using undelated variable 
     #   ansible.builtin.debug:
     #     msg: Value of CLIURL is {{CLIURL}}
@@ -25,6 +26,7 @@
     # - name: Printing prompt variable  
     #   ansible.builtin.debug:
     #     msg: Name of the person is {{URNAME}}
+    
     - name: This is env specific
       ansible.builtin.debug:
         msg: Type Of Instance To Be Used {{INS_TYPE}}
