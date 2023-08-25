@@ -1,26 +1,24 @@
-- name: Demo on vars usage
-  hosts: all
-  vars:                                  # Global Variables : All the tasks of this play can access this variable                            
-   URL: play.google.com
+- name: Demo on vars usage  
+  hosts: all    
+  vars:                                   # Global Variables : All the tasks of this play can access this variable 
+    URL: play.google.com    
   vars_files: 
     - "{{ENV}}.yml"
   vars_prompt:
     - name: URNAME
       prompt: Enter your name 
-      private: false      
-  tasks:
-   - name: printing the variable
-     ansible.builtin.debug:
-       msg: value of the URL is {{URL}} 
+      private: false                
+  tasks: 
+    - name: Printing the variable 
+      ansible.builtin.debug:
+        msg: Value of the URL is {{URL}}
 
-   - name: Demo on Printing the local variable
-     ansible.builtin.debug:
-       msg: value of the URL is {{URL}} 
-     vars:
-      URL: task.google.com
-   - name: This is env specific
-     ansible.builtin.debug:
-       msg: Type Of Instance To Be Used {{INS_TYPE}}
+    - name: Demo on using local variable
+      ansible.builtin.debug:
+        msg: Value of the URL's is {{URL}}
+      vars: 
+        URL: task.google.com
+     
 
 # - name: Printing prompt variable  
     #   ansible.builtin.debug:
