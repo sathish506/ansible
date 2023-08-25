@@ -28,3 +28,7 @@ Playbooks are written using a language called YAML.
 YAML is just  markup languaga ; Markup language is nothing a presentation language
 
 YAML is indendation specific.
+
+NOTE : If you would just like to print a variable, then enclose the variable in "{{varName}}" and there is no single quote concept 4 and if the variable is present in between the string of words, you don't have to enclose them in quotes.
+
+1) No two tasks of a play can have the same name.
