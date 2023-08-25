@@ -6,3 +6,10 @@
    - name: printing the variable
      ansible.builtin.debug:
        msg: value of the URL is {{URL}} 
+
+   - name: Demo on Printing the local variable
+     ansible.builtin.debug:
+       msg: value of the URL is {{URL}} 
+  vars:
+   URL: task.google.com
+   
