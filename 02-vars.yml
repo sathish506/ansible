@@ -1,7 +1,13 @@
 - name: Demo on vars usage
   hosts: all
   vars:                                  # Global Variables : All the tasks of this play can access this variable                            
-   URL: play.google.com      
+   URL: play.google.com
+ vars_files: 
+    - "{{ENV}}.yml"
+  vars_prompt:
+    - name: URNAME
+      prompt: Enter your name 
+      private: false      
   tasks:
    - name: printing the variable
      ansible.builtin.debug:
@@ -12,3 +18,14 @@
        msg: value of the URL is {{URL}} 
      vars:
       URL: task.google.com
+
+# - name: Printing prompt variable  
+    #   ansible.builtin.debug:
+    #     msg: Name of the person is {{URNAME}}
+  - name: This is env specific
+      ansible.builtin.debug:
+        msg: Type Of Instance To Be Used {{INS_TYPE}}
+
+# PS : If you try to print a variable that is not declared, it will throw an error.
+# Variable Precedence : 
+### CLI Variables > Local Variable > Global Variable
