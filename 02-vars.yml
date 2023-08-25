@@ -4,5 +4,5 @@
    URL: play.google.com
   tasks:
    - name: printing the variable
-    ansible.builtin.debug:
-    msg: value of the URL is {{URL}} 
+     ansible.builtin.debug:
+     msg: value of the URL is {{URL}} 
