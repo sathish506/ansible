@@ -2,7 +2,7 @@
   hosts: all
   vars:                                  # Global Variables : All the tasks of this play can access this variable                            
    URL: play.google.com
- vars_files: 
+  vars_files: 
     - "{{ENV}}.yml"
   vars_prompt:
     - name: URNAME
