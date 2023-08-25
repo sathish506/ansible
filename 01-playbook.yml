@@ -3,7 +3,7 @@
   tasks:
    - name: printing Hai from task1 of Play1
      ansible.builtin.debug:
-       msg: "Hai from task1 of Play1"
+     msg: "Hai from task1 of Play1"
 
 
   
