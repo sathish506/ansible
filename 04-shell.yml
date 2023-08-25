@@ -9,5 +9,13 @@
       ansible.builtin.debug:
        msg: "{{OUT.stdout}}"
 
+    - name: printing the uptime 
+      set_fact:
+        EXITCODE: "{{OUT.rc}}"
+
+    - name: printing the uptime exit code
+      ansible.builtin.debug:
+       msg: uptime exit code is "{{EXITCODE}}"
+
 
         
