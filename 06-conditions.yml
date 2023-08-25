@@ -4,12 +4,12 @@
     - name: Run this only when the distribution is Centos 
       ansible.builtin.debug:
         msg: Welcome to Centos {{ansible_distribution}}
-      when: ansible_distribution=="Centos"
+      when: ansible_distribution== "Centos"
 
     - name: Run this only when the distribtion is Ubuntu
       ansible.builtin.debug:
         msg: welcome Ubuntu {{ansible_distribution}}
-      when: ansible_distribution=="Ubuntu"
+      when: ansible_distribution== "Ubuntu"
 
 
 # Older versions of ansible uses undefined, latest version os ansible users not defined 
