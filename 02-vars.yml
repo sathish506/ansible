@@ -17,7 +17,7 @@
      ansible.builtin.debug:
        msg: value of the URL is {{URL}} 
      vars:
-     URL: task.google.com
+      URL: task.google.com
    - name: This is env specific
      ansible.builtin.debug:
        msg: Type Of Instance To Be Used {{INS_TYPE}}
