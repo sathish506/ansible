@@ -1,0 +1,17 @@
+- name: Demo on conditions
+  hosts: all
+  tasks: 
+    - name: Run this only when the distribution is Centos 
+      ansible.builtin.debug:
+        msg: Welcome to Centos {{ansible_distribution}}
+      when: ansible_distribution=="Centos"
+
+    - name: Run this only when the distribtion is Ubuntu
+      ansible.builtin.debug:
+        msg: welcome Ubuntu {{ansible_distribution}}
+      when: ansible_distribution=="Ubuntu"
+
+
+# Older versions of ansible uses undefined, latest version os ansible users not defined 
+# defined , not defined, true, false , succeded , failure all of them are predefined keywords as per the documentation 
+# Ref : https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_conditionals.html
