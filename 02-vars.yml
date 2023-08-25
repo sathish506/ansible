@@ -15,7 +15,7 @@
 
     - name: Demo on using local variable
       ansible.builtin.debug:
-        msg: Value of the URL's is {{URL}}
+        msg: Value of the URL is {{URL}}
       vars: 
         URL: task.google.com
 # - name: Demo on using undelated variable 
