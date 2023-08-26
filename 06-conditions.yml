@@ -1,15 +1,21 @@
 - name: Demo on conditions
   hosts: all
+  vars:
+   action: true
   tasks: 
-    - name: Run this only when the distribution is CentOS 
+  - name: Run this only when the distribution is CentOS 
       ansible.builtin.debug:
         msg: Welcome to CentOS {{ansible_distribution}}
       when: ansible_distribution == "CentOS"
-
-    - name: Run this only when the distribtion is Ubuntu
+  - name: Run this only when the distribtion is Ubuntu
       ansible.builtin.debug:
         msg: Welcome Ubuntu {{ansible_distribution}}
       when: ansible_distribution == "Ubuntu"
+
+  - name: Run this action 
+      ansible.builtin.debug:
+        msg: action is true 
+      when: action
 
 
 # Older versions of ansible uses undefined, latest version os ansible users not defined 
