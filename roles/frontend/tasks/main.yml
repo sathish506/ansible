@@ -1,7 +1,7 @@
 - name: Installing Nginx
   ansible.builtin.package:
       name: nginx 
-      state: present 
+      state: present
 
 - name: Download and extracting frontend
   ansible.builtin.unarchive:
@@ -19,4 +19,3 @@
     src: /tmp/frontend-main/static/
     dest: /usr/share/nginx/html/ 
     remote_src: yes                    # This ensure your source file to copy is non remote machine.
-    
