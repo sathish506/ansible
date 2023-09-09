@@ -1,0 +1,14 @@
+- name: Demo on copy 
+  hosts: all 
+  become: yes
+  tasks: 
+    - name: Copying the file
+      ansible.builtin.copy:
+        src: systemd.service
+        dest: /home/centos/systemd.service
+    - name: Installing httpd
+      ansible.builtin.package:
+        name:
+          - httpd 
+          - jq 
+        state: present
