@@ -39,6 +39,7 @@ In ansible, fact is the property of the node mentioned in the inventory file. By
     $ ansible -i inv all -e ansible_user=centos -e ansible_password=abc@123 -m setup
 
 Ansible Roles :
+-------------
 
 roles/
     common/               # this hierarchy represents a "role"
