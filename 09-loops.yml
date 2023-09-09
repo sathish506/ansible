@@ -3,7 +3,7 @@
   tasks: 
   - name: Demo on using loops
     ansible.builtin.debug:
-      msg: "Value is {{item}}"
+      msg: "Value is {{item}}"           # Item is a key work to represent the value in the
     loop:
      - 100
      - 300
