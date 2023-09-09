@@ -1,8 +1,15 @@
-- name: Demo on Package Installation
-  hosts: all
+- name: Demo on package installation  
+  hosts: all 
   become: yes
-  tasks:
-  - name: Instaling Nginx
-    ansible.builtin.package:
-     name: nginx
-     state: present
+  tasks: 
+    - name: Removing Nginx
+      ansible.builtin.package:
+        name: nginx 
+        state: absent 
+
+    - name: Installing httpd
+      ansible.builtin.package:
+        name:
+          - httpd 
+          - jq 
+        state: present
