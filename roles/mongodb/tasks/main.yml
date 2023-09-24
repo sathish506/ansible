@@ -8,3 +8,9 @@
     name: mongodb-org 
     state: present
 
+- name: Starting {{COMPONENT}}
+  systemd:
+    name: mongod
+    state: restarted
+    enabled: yes
+    
