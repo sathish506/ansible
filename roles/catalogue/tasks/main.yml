@@ -43,9 +43,9 @@
 - name: Starting {{COMPONENT}} 
   systemd:
     name: "{{COMPONENT}}"
-    state: restarted
+    state: started
     enabled: yes
-     
+    daemon_reload: yes     
 
 - name: configuring the service name
   ansible.builtin.shell: set-hostname {{COMPONENT}}-{{ENV}}
