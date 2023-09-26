@@ -15,13 +15,13 @@
     state: absent
 
 - name: Copying the frontend
-  ansible.builtin.template:
+  ansible.builtin.copy:
     src: /tmp/frontend-main/static/
     dest: /usr/share/nginx/html/ 
     remote_src: yes                    # This ensure your source file to copy is non remote machine.
 
 - name: Copying the proxy file
-  ansible.builtin.copy:
+  ansible.builtin.module:
     src: roboshop.conf 
     dest: /etc/nginx/default.d/roboshop.conf
   
