@@ -31,3 +31,9 @@
     group: "{{APPUSER}}"
     remote_src: yes  
 
+- name: Generating the artifacts with npm install
+  community.general.npm:
+    path: /home/{{APPUSER}}/{{COMPONENT}}
+    
+
+
