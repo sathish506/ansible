@@ -14,7 +14,7 @@
 - name: download and extracting {{COMPONENT}}
   ansible.builtin.include_role:
     name: common
-    tasks_from: download and extract
+    tasks_from: download_and_extract
 
 - name: Generating the artifacts with npm install
   community.general.npm:
