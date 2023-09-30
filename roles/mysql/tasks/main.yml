@@ -7,7 +7,7 @@
   ansible.builtin.package:
     name: mysql-community-server 
           - MySQL-python
-        - python3-PyMySQL 
+          - python3-PyMySQL 
       state: present
 
 
