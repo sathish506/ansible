@@ -27,22 +27,22 @@
           login_password: RoboShop@1
           filter: version
   rescue:
-- name: Fetching the log file from the remote node
-  ansible.builtin.slurp:
-  src: /var/log/mysqld.log
-  register: pwd_log
+    - name: Fetching the log file from the remote node
+      ansible.builtin.slurp:
+       src: /var/log/mysqld.log
+      register: pwd_log
 
 
-- name: Extracting the root password
-  ansible.builtin.set_fact:
-  DEFAULT_PASSWORD: "{{ pwd_log['content'] | b64decode | regex_findall('.*temporary password.*')| join(' ') | split(' ') | last }}"
+    - name: Extracting the root password
+      ansible.builtin.set_fact:
+          DEFAULT_PASSWORD: "{{ pwd_log['content'] | b64decode | regex_findall('.*temporary password.*')| join(' ') | split(' ') | last }}"
   
-- name: Resetting Default root password of {{COMPONENT}} 
-  ansible.builtin.shell: echo "ALTER USER 'root'@'localhost' IDENTIFIED BY '{{ROOT_PASSWORD}}';" | mysql --connect-expired-password -uroot -p"{{DEFAULT_PASSWORD}}"
+    - name: Resetting Default root password of {{COMPONENT}} 
+      ansible.builtin.shell: echo "ALTER USER 'root'@'localhost' IDENTIFIED BY '{{ROOT_PASSWORD}}';" | mysql --connect-expired-password -uroot -p"{{DEFAULT_PASSWORD}}"
 
-- name: Removing {{COMPONENT}} password validate plugin 
-  ansible.builtin.shell: echo "uninstall plugin validate_password;" | mysql -uroot -pRoboShop@1 
-  ignore_errors: yes
+    - name: Removing {{COMPONENT}} password validate plugin 
+      ansible.builtin.shell: echo "uninstall plugin validate_password;" | mysql -uroot -pRoboShop@1 
+      ignore_errors: yes
 
 - name: Download and extracting {{COMPONENT}}
   ansible.builtin.unarchive:
