@@ -6,7 +6,10 @@
 - name: Installing {{COMPONENT}}
   ansible.builtin.package:
     name: mysql-community-server 
-    state: present
+          - MySQL-python
+        - python3-PyMySQL 
+      state: present
+
 
 - name: Starting {{COMPONENT}}
   systemd:
