@@ -14,9 +14,10 @@
     tasks_from: download_and_extract
 
 - name: Generating the artifacts with npm install
-  community.general.npm:
-    path: /home/{{APPUSER}}/{{COMPONENT}}
-
+  ansible.builtin.shell: mvn clean package && mv target/{{COMPONENT}}-1.0.jar {{COMPONENT}}.jar
+  args:
+    chdir: /home/{{APPUSER}}/{{COMPONENT}}/
+    
 - name: Configuring {{COMPONENT}} the service
   ansible.builtin.include_role:
     name: common
