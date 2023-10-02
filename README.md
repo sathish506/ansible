@@ -59,3 +59,17 @@ roles/
         meta/             #
             main.yml      #  <-- role dependencies   
 
+### when to use ansible pull vs ansible push ?
+
+1) When your infrastructure is static, then we will host an ansible server and will target configuration managment on all the nodes from your ansible server.
+
+2) when your infrastructure is not static, when means we ofren scale out and scale down the infra in this case maintening the infra is quite challenging and to avoid this what we do is as a prt of the bootstrapping we will let the ansible-pull command to run.
+
+point to be noted when using the pull:
+
+* Ensure your nodes running ansible has ansible installed.
+* Pull only works from GIT
+
+### How to use ansible pull:
+
+    $ ansible-pull -U https://github.com/sathish506/ansible.git -e ENV=dev -e COMPONENT=mongodb roboshop-pull.yml
