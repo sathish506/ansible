@@ -73,3 +73,8 @@ point to be noted when using the pull:
 ### How to use ansible pull:
 
     $ ansible-pull -U https://github.com/sathish506/ansible.git -e ENV=dev -e COMPONENT=mongodb roboshop-pull.yml
+
+### Role Dependency :
+
+In Ansible terms, a dependency is any role that needs to have run before the current role runs.
+
