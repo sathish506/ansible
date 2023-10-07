@@ -1,7 +1,7 @@
 pipeline {
     agent any
 
-       environment {                                // Pipeline Variables : All the stages of the pipeline can use it
+   environment {                                // Pipeline Variables : All the stages of the pipeline can use it
        SSH_CRED = credentials('SSH_CRED')
     }
  stages {
