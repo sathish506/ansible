@@ -4,10 +4,11 @@ pipeline {
        environment {                                // Pipeline Variables : All the stages of the pipeline can use it
        SSH_CRED = credentials('SSH_CRED')
     }
-    
+
     stages {
         stage('performing a dry run') {
            steps {
+            
             sh  '''
             
             env 
