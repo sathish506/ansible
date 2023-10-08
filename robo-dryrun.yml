@@ -5,7 +5,7 @@
   gather_facts: False
   vars:
     instance_type: "t3.micro"
-    security_group_id: "sg-072a9ee99beac7e26"  # Update as per your security group id
+    security_group_id: "sg-052c68247aae56a95"  # Update as per your security group id
     image: "ami-049e4dfc08f0f9b55"             # Update this with the AMI ID in your account which has ansible installed.
     region: "us-east-1"
   tasks:
