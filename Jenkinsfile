@@ -6,7 +6,7 @@ pipeline {
     }
 
     stages {
-        stage('performing a dry run') {
+        stage('performing a dry run') {            // This stage should only run when you raise a pull request
            steps {
             
             sh  '''
